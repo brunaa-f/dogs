@@ -26,12 +26,12 @@ const LoginForm = () => {
     <section className='animeLeft'>
       <h1 className='title'>Login</h1>
       <form className={styles.form} onSubmit={handleSubmit}>
-        <Input label="Usuário" type="text" name="username" {...username} />
-        <Input label="Senha" type="password" name="password" {...password} />
+        <Input label="User" type="text" name="username" {...username} />
+        <Input label="Password" type="password" name="password" {...password} />
         {loading ? (
           <Button disabled>Carregando...</Button>
         ) : (
-          <Button>Entrar</Button>
+          <Button>Login</Button>
         )}
         <Error error={error}/>
       </form>
@@ -39,7 +39,7 @@ const LoginForm = () => {
       <div className={styles.create}>
         <h2 className={styles.subtitle}>Create a new account</h2>
         <p>It's quick and easy.</p>
-        <Link className={stylesBtn.button} to="/login/create">Cadastro</Link>
+        <Link className={stylesBtn.button} to="/login/create">Sign up</Link>
       </div>
 
     </section>
