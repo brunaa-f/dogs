@@ -10,7 +10,6 @@ const useFetch = () => {
     let json;
 
     try {
-      debugger
       setError(null);
       setLoading(true);
       response = await fetch(url, options);
