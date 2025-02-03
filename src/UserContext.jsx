@@ -62,7 +62,6 @@ export const UserStorage = ({ children }) => {
             const response = await fetch(url, options);
             if(!response.ok) throw new Error('Token inválido');
             await getUser(token);
-            navigate('/account')
           } catch (err){
             userLogout();
           } finally {
