@@ -8,29 +8,31 @@ import Login from "./Components/Login/Login";
 import { UserStorage } from "./UserContext";
 import User from "./Components/User/User";
 import ProtectedRoute from "./Components/Helper/ProtectedRoute";
-import UserProfile from './Components/User/UserProfile';
-import NotFound from './Components/NotFound';
+import UserProfile from "./Components/User/UserProfile";
+import NotFound from "./Components/NotFound";
 
 const App = () => {
   return (
-    <div>
+    <div className="App">
       <BrowserRouter>
         <UserStorage>
           <Header />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="login/*" element={<Login />} />
-            <Route
-              path="account/*"
-              element={
-                <ProtectedRoute>
-                  <User />
-                </ProtectedRoute>
-              }
-            />
+          <main className="AppBody">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="login/*" element={<Login />} />
+              <Route
+                path="account/*"
+                element={
+                  <ProtectedRoute>
+                    <User />
+                  </ProtectedRoute>
+                }
+              />
               <Route path="profile/:user" element={<UserProfile />} />
               <Route path="*" element={<NotFound />} />
-          </Routes>
+            </Routes>
+          </main>
           <Footer />
         </UserStorage>
       </BrowserRouter>
